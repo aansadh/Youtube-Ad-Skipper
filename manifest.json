@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Ad Skipper",
+  "version": "1.0",
+  "description": "Skips YouTube ads instantly!",
+  "author": "Aan",
+  "permissions": ["scripting", "debugger", "tabs"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "host_permissions": ["*://www.youtube.com/*"],
+  "action": {
+    "default_title": "YouTube Ad Skipper"
+  }
+}
